@@ -11,11 +11,19 @@ html {
 
 #article p,
 img {
+  margin-top: 1.5rem;
+}
+
+#article figure {
+  margin-bottom: 3rem;
+}
+#article figcaption {
   margin-top: 1rem;
 }
 
-#article img {
-  margin-bottom: 3rem;
+#article figcaption {
+  font-style: italic;
+  font-size: small;
 }
 
 /* html,

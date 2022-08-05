@@ -10,6 +10,7 @@ export default function ArticleBody({
   author,
   suscription,
 }) {
+  console.log(content);
   return (
     <>
       <div className="px-6 py-12 max-w-xl mx-auto">
