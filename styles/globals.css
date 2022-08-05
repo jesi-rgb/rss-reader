@@ -8,6 +8,16 @@
 html {
   background: #eafcfb;
 }
+
+#article p,
+img {
+  margin-top: 1rem;
+}
+
+#article img {
+  margin-bottom: 3rem;
+}
+
 /* html,
 body {
   padding: 0;

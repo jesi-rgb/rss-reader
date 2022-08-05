@@ -7,8 +7,8 @@ export default function Feed({ feed, items }) {
       <h1 className="font-bold text-5xl mb-12 font-title text-accent-1">
         {feed.title}
       </h1>
-      <div className="space-y-4">
-        {items.map((item) => (
+      <div className="space-y-6">
+        {items.slice(0, 10).map((item) => (
           <ArticleItem key={item.id} item={item} />
         ))}
       </div>
