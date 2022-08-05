@@ -1,11 +1,17 @@
 import { formatDistance } from "date-fns";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { titleToUrl, spliceSentences } from "../utils/utils";
 
 export default function ArticleItem({ item }) {
+  const articleTitleToUrl = titleToUrl(item.title);
+
+  const { suscription } = useRouter().query;
   return (
-    <a
-      key={item.link}
+    <Link
+      key={item.id}
       className="block p-2 hover:text-accent-1-hover"
-      href={item.link}
+      href={`/feeds/${suscription}/${articleTitleToUrl}`}
       target="_blank"
       rel="noopener noreferrer"
     >
@@ -22,17 +28,6 @@ export default function ArticleItem({ item }) {
           {spliceSentences(item.contentSnippet)}
         </div>
       </div>
-    </a>
+    </Link>
   );
-}
-
-function spliceSentences(text, nSentences = 3) {
-  let sentences = text.split(".");
-
-  if (sentences.length > nSentences) {
-    sentences = sentences.splice(0, nSentences);
-  }
-  console.log(sentences);
-
-  return sentences.join(" ");
 }

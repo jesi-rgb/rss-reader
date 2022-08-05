@@ -9,7 +9,7 @@ export default function Feed({ feed, items }) {
       </h1>
       <div className="space-y-4">
         {items.map((item) => (
-          <ArticleItem key={item} item={item} />
+          <ArticleItem key={item.id} item={item} />
         ))}
       </div>
     </div>
@@ -18,13 +18,13 @@ export default function Feed({ feed, items }) {
 
 export async function getStaticPaths() {
   return {
-    paths: FEEDS.map((feed) => ({ params: { slug: feed.slug } })),
+    paths: FEEDS.map((feed) => ({ params: { suscription: feed.slug } })),
     fallback: false,
   };
 }
 
 export async function getStaticProps({ params }) {
-  const feed = FEEDS.find((feed) => feed.slug === params.slug);
+  const feed = FEEDS.find((feed) => feed.slug === params.suscription);
   const detailedFeed = await getFeed(feed.url);
 
   return {
