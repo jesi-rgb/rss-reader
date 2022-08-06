@@ -8,7 +8,7 @@ export default function Feed({ feed, items }) {
         {feed.title}
       </h1>
       <div className="space-y-6">
-        {items.slice(0, 10).map((item) => (
+        {items.slice(0, 5).map((item) => (
           <ArticleItem key={item.id} item={item} />
         ))}
       </div>
