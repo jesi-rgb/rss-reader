@@ -16,7 +16,7 @@ export default function ArticleBody({
       <div className="px-6 py-12 max-w-xl mx-auto">
         <div className="font-title text-accent-1 text-3xl mb-10">{title}</div>
         <div className="flex flex-row items-center space-x-2 font-body text-accent-1">
-          <div>{suscription.replace(/^\w/, (c) => c.toUpperCase())}</div>
+          <div>{suscription}</div>
           <DotFilledIcon />
           <div>{author}</div>
           <DotFilledIcon />

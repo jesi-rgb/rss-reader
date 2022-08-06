@@ -50,9 +50,9 @@ export async function getStaticProps({ params }) {
     props: {
       title: article.title,
       link: article.link,
-      suscription: params.suscription,
+      suscription: feed.title,
       date: article.pubDate,
-      author: article.author,
+      author: article.author ?? "",
       content: article.content,
       contentSnippet: article.contentSnippet,
     },
